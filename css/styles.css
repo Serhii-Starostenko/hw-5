@@ -33,11 +33,45 @@ h1,h2,h3,p,ul{
 
 }
 
+
+
 /* header */
+
+
+
+
+
+
 .headers{
     border-bottom: 1px solid rgba(236, 236, 236, 1);
     background-color: var(--background-color);
 }
+/* .headers::after{
+    content: "";
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+}
+        .modal-hero {
+  position: absolute;
+    width: 528px;
+    height: 581px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 4px;
+
+}
+
+.modal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #0000001A
+
+} */
 .header-container{
   display:flex;
 align-items: center;
@@ -93,6 +127,7 @@ margin-right: 50px;
 }
 .nav-menu li:last-child{
     margin-right: 0px;
+
 }
 
 .nav-link{
@@ -102,18 +137,26 @@ margin-right: 50px;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+
     color: var(--title-text-color);
     text-decoration: none;
+
     padding: 32px 0px;
+
     display:block;
+    
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
+
+
   .nav-link:hover,.nav-link:focus {
-      background-color: var(--background-color);
+      /* background-color: var(--background-color); */
       color: var(--accent-text-color);
   }
 
 
  .link-ative{
+     position: relative;
      color:var(--accent-text-color);
     font-family: 'Roboto';
     font-style: normal;
@@ -124,6 +167,18 @@ margin-right: 50px;
     text-decoration: none;
     padding: 32px 0px;
     display:block;}
+
+         .link-ative::after{
+             content: "";
+             position: absolute;
+
+             width: 100%;
+             height: 4px;
+             left: 0px;
+             bottom: 0px;
+             background-color: var(--accent-text-color);
+             border-radius: 2px;
+         }
 
     .link-ative:focus{
         color: var(--accent-text-color);
@@ -159,18 +214,18 @@ font-weight: 500;
 font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
+
 text-decoration: none;
-display: block;
 margin-right:50px;
 padding: 32px 0px;
 display: flex;
-
-color:#757575
+color:#757575;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .contact-mail:hover,.contact-mail:focus  {
-    background-color: var(--background-color);
+
     color: var(--accent-text-color);
 }
 .icon-mail{
@@ -191,12 +246,12 @@ color:#757575
     display: flex;
     padding: 32px 0px;
 
-    color: #757575
+    color: #757575;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-tel:hover,
 .contact-tel:focus{
-    background-color: var(--background-color);
     color: var(--accent-text-color);
 }
 .icon-tel{
@@ -207,7 +262,6 @@ fill:currentColor;
 
 
 .benefits-title {
-    position: absolute;
     width: 1px;
     height: 1px;
     margin: -1px;
@@ -221,6 +275,7 @@ fill:currentColor;
 
 /* hero */
 .section-hero{
+    
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
@@ -456,33 +511,28 @@ margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+
     width: 44px;
         height: 44px;
     border-radius:50%;
+
     color: rgba(175, 177, 184, 1);
-   
-   
+
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1),background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-icon:hover {
+
+.team-icon:hover,.team-icon:focus {
     color: #fff;
     background-color:var(--accent-text-color);
 }
-.team-icon:focus{
-    color: #fff;
-    background-color:var(--accent-text-color);
-}
+
 .social-network{
-
     fill:currentColor;
-    
 }
-.social-network:focus {
+.social-network:focus,.social-network:hover {
     fill: currentColor;
+}
 
-}
-.social-network:hover {
-    fill:currentColor;
-}
 
 
 
@@ -502,6 +552,8 @@ margin-right: 10px;
         text-align: center;
         letter-spacing: 0.03em;
         margin-bottom: 50px;
+
+       
 }
 
 
@@ -522,13 +574,7 @@ margin-right: 10px;
 .icon-lists .item:last-child{
     margin-right: 0px;
 }
-.icon-lists .item :focus,
-.icon-lists .item :hover {
-color: var(--accent-text-color);
-background-color: #fff;
-    border-color: var(--accent-text-color);
 
-}
 .icon-lists .item a{
     display:flex;
     align-items: center;
@@ -538,21 +584,25 @@ background-color: #fff;
     color:rgba(175, 177, 184, 1) ;
     border: 1px solid rgba(175, 177, 184, 1);
         border-radius: 4px;
+
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+,fill 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
+.icon-lists .item a:focus,
+.icon-lists .item a:hover {
+    color: var(--accent-text-color);
+    border-color: var(--accent-text-color);
+
+}
 
 .client-icon{
-    fill:currentColor
-}
-
-.client-icon:hover,.client-icon:focus {
-
     fill:currentColor;
 
 }
 
-
- /* footer */
+                  /* footer */
 
 .my-footer{
     background-color: #2F303A;
@@ -612,18 +662,13 @@ margin-bottom: 9px;
     letter-spacing: 0.03em;
     text-decoration: none;
     display:block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+
 }
 
-.contact-footer:hover {
-
-    color: var(--accent-text-color);
+.contact-footer:hover,.contact-footer:focus { color: var(--accent-text-color);
 }
 
-.contact-footer:focus {
-    color: var(--accent-text-color);
-   background-color:#2F303A;
-    
-}
 .footer-icon{
     margin-left: 70px;
 
@@ -656,6 +701,7 @@ display: flex;
         height: 44px;
         border-radius: 50%;
         background-color:rgba(68, 69, 78, 1);
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
         
         
 } .footer-icon-list:hover {
@@ -693,6 +739,7 @@ display: flex;
     line-height: 1.62;
     letter-spacing: 0.03em;
     padding: 6px 22px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portf-button:hover,
 .portf-button:focus{
@@ -716,6 +763,9 @@ display: flex;
     font-size: 16px;
     line-height: 1.62;
     letter-spacing: 0.03em;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    ,background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    ,color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portf-button-web:hover,
 .portf-button-web:focus {
@@ -772,7 +822,7 @@ margin-bottom: 30px;
     background-color: red;
     box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16);
 }
-.progect-list .items:hover {
+.progect-list .items:hover{
     box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16);
 }
 .progect-list .items:nth-child(3n){
